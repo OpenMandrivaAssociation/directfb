@@ -48,7 +48,7 @@ Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
 Patch12:	DirectFB-ffmpeg.patch
 Patch13:	DirectFB-1.7.4-uniquewm-compile-fixes.patch
-Patch14:	DirectFB-1.7.6-Add-missing-divine-include-file.patch
+Patch14:	DirectFB-1.7.6-add-missing-divine-include-file.patch
 
 Conflicts:	%mklibname directfb -d < 1.7
 BuildRequires:	bzip2-devel
