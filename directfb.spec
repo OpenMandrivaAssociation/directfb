@@ -48,6 +48,7 @@ Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
 Patch12:	DirectFB-ffmpeg.patch
 Patch13:	DirectFB-1.7.4-uniquewm-compile-fixes.patch
+Patch14:	DirectFB-1.7.6-Add-missing-divine-include-file.patch
 
 Conflicts:	%mklibname directfb -d < 1.7
 BuildRequires:	bzip2-devel
@@ -199,7 +200,9 @@ DirectFB documentation and examples.
 %patch11 -p1 -b .thumb~
 %patch12 -p1 -b .ffmpeg~
 %patch13 -p1 -b .uniquewm~
+%patch14 -p1 -b .divinc~
 
+#A reminder of what not to do to include files....
 # Needed for Qt 5 as of Qt 5.0.1:
 #sed -e '/define __typeof/d' -i lib/direct/os/linux/glibc/types.h
 #find . -name "*.h" |xargs sed -i -e 's,__typeof__,typeof,g'
