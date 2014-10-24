@@ -299,10 +299,10 @@ export CXX=g++
 # multiarch policy
 %multiarch_binaries %{buildroot}%{_bindir}/directfb-config
 
-
+#two temporary hacks to sort out arm 32 bit build installs
 %files
 
-%ifarch %{armv7hl}
+%ifarch %{arm}
 %{_bindir}/c64xdump
 %endif
 %{_bindir}/dfb*
@@ -364,7 +364,7 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifarch %{armv7hl}
+%ifarch %{arm}
 %files -n %{libdavinci}
 %{_libdir}/libdavinci-%{api}.so.%{major}*
 %endif
