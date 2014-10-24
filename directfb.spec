@@ -301,7 +301,8 @@ export CXX=g++
 
 
 %files
-%ifarch %{arm}
+
+%ifarch %{armv7hl}
 %{_bindir}/c64xdump
 %endif
 %{_bindir}/dfb*
@@ -363,7 +364,7 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifarch %{armx}
+%ifarch %{armv7hl}
 %files -n %{libdavinci}
 %{_libdir}/libdavinci-%{api}.so.%{major}*
 %endif
