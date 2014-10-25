@@ -10,7 +10,7 @@
 %define libuniquewm %mklibname uniquewm %{api} %{major}
 %define libdivine %mklibname libdivine %{api} %{major}
 %define libsawman %mklibname libsawman %{api} %{major}
-%define libdavinci_cx64 %mklibname libdavinci_c64x %{api} %{major}
+%define libdavinci %mklibname libdavinci %{api} %{major}
 %define devname %mklibname %{name} %{api} -d
 
 # Multiple applications support
