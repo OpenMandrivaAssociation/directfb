@@ -364,10 +364,10 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-#%ifarch %{arm}
+%ifarch %{arm}
 %files -n %{libdavinci}
-%{_libdir}/libdavinci_c64x.%{api}.so.%{major}*
-#%endif
+%{_libdir}/libdavinci_c64x.so.0*
+%endif
 
 %files doc
 %doc docs/html/*.html
