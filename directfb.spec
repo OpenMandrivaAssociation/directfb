@@ -366,7 +366,7 @@ export CXX=g++
 
 %ifarch %{arm}
 %files -n %{libdavinci}
-%{_libdir}/libdavinci_c64x%{api}.so.%{major}*
+%{_libdir}/libdavinci_c64x.%{api}.so.%{major}*
 %endif
 
 %files doc
