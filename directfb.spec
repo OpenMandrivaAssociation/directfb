@@ -10,7 +10,7 @@
 %define libuniquewm %mklibname uniquewm %{api} %{major}
 %define libdivine %mklibname libdivine %{api} %{major}
 %define libsawman %mklibname libsawman %{api} %{major}
-%define libdavinci %mklibname davinci_c64x %{api} %{major}
+%define libdavinci %mklibname libdavinci_c64x %{api} %{major}
 %define devname %mklibname %{name} %{api} -d
 
 # Multiple applications support
@@ -364,10 +364,10 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifarch %{arm}
+#%ifarch %{arm}
 %files -n %{libdavinci}
 %{_libdir}/libdavinci_c64x.%{api}.so.%{major}*
-%endif
+#%endif
 
 %files doc
 %doc docs/html/*.html
