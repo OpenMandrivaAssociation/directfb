@@ -144,25 +144,25 @@ Group:		System/Libraries
 %description -n	%{libfusionsound}
 The fusionsound library, a part of directfb
 
-%package -n	%{libuniquewm}
-Summary:	The uniquewm library, a part of directfb
-Group:		System/Libraries
+#%package -n	%{libuniquewm}
+#Summary:	The uniquewm library, a part of directfb
+#Group:		System/Libraries
 
-%description -n	%{libuniquewm}
-The uniquewm library, a part of directfb
+#%description -n	%{libuniquewm}
+#The uniquewm library, a part of directfb
 
 %package -n	%{libdivine}
 Summary:	The divine library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{lib}libdivine1.7_6
+Obsoletes:	%{_lib}libdivine1.7_6
 
-%description -n	%{libuniquewm}
+%description -n	%{libdivine}
 The divine library, a part of directfb
 
 %package -n	%{libsawman}
 Summary:	The sawman library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{lib}libsawman1.7_6
+Obsoletes:	%{_lib}/libsawman1.7_6
 
 %description -n	%{libsawman}
 The sawman library, a part of directfb
@@ -170,7 +170,7 @@ The sawman library, a part of directfb
 %package -n	%{libdavinci}
 Summary:	The davinci library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{lib}libdavinci1.7_6
+Obsoletes:	%{_lib}/libdavinci1.7_6
 
 %description -n	%{libdavinci}
 The davinci library, a part of directfb
