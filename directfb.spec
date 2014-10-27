@@ -302,7 +302,7 @@ export CXX=g++
 #two temporary hacks to sort out arm 32 bit build installs
 %files
 
-%ifnarch %{armx}
+%ifarch %{arm}
 %{_bindir}/c64xdump
 %endif
 %{_bindir}/dfb*
@@ -364,7 +364,7 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifnarch %{armx}
+%ifarch %{arm}
 %files -n %{libdavinci}
 %{_libdir}/libdavinci_c64x.so.0
 %{_libdir}/libdavinci_c64x.so.0.0.0
