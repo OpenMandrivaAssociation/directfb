@@ -61,7 +61,6 @@ BuildRequires:	pkgconfig(egl)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(freetype2)
-#BuildRequires:	pkgconfig(fusionsound)
 BuildRequires:	pkgconfig(gbm)
 BuildRequires:	pkgconfig(glesv2)
 BuildRequires:	pkgconfig(gstreamer-app-1.0)
@@ -143,13 +142,6 @@ Group:		System/Libraries
 
 %description -n	%{libfusionsound}
 The fusionsound library, a part of directfb
-
-#%package -n	%{libuniquewm}
-#Summary:	The uniquewm library, a part of directfb
-#Group:		System/Libraries
-
-#%description -n	%{libuniquewm}
-#The uniquewm library, a part of directfb
 
 %package -n	%{libdivine}
 Summary:	The divine library, a part of directfb
@@ -307,7 +299,7 @@ export CXX=g++
 
 %files
 
-%ifnarch %{armx}
+%ifarch %{arm}
 %{_bindir}/c64xdump
 %endif
 %{_bindir}/dfb*
@@ -369,7 +361,7 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifnarch %{arm}
+%ifarch %{arm}
 %files -n %{libdavinci}
 %{_libdir}/libdavinci_c64x.0
 %{_libdir}/libdavinci_c64x.0.0.0
