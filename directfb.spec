@@ -8,9 +8,9 @@
 %define libfusiondale %mklibname fusiondale %{api} %{major}
 %define libfusionsound %mklibname fusionsound %{api} %{major}
 %define libuniquewm %mklibname uniquewm %{api} %{major}
-%define libdivine %mklibname libdivine %{api} %{major}
-%define libsawman %mklibname libsawman %{api} %{major}
-%define libdavinci %mklibname libdavinci %{api} %{major}
+%define libdivine %mklibname divine %{api} %{major}
+%define libsawman %mklibname sawman %{api} %{major}
+%define libdavinci %mklibname davinci_cx64 0
 %define devname %mklibname %{name} %{api} -d
 
 # Multiple applications support
@@ -51,6 +51,8 @@ Patch13:	DirectFB-1.7.4-uniquewm-compile-fixes.patch
 Patch14:	DirectFB-1.7.6-add-missing-divine-include-file.patch
 
 Conflicts:	%mklibname directfb -d < 1.7
+
+
 BuildRequires:	bzip2-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(libmng)
@@ -152,6 +154,7 @@ The uniquewm library, a part of directfb
 %package -n	%{libdivine}
 Summary:	The divine library, a part of directfb
 Group:		System/Libraries
+Obsoletes:	%{lib}libdivine1.7_6
 
 %description -n	%{libuniquewm}
 The divine library, a part of directfb
@@ -159,6 +162,7 @@ The divine library, a part of directfb
 %package -n	%{libsawman}
 Summary:	The sawman library, a part of directfb
 Group:		System/Libraries
+Obsoletes:	%{lib}libsawman1.7_6
 
 %description -n	%{libsawman}
 The sawman library, a part of directfb
@@ -166,6 +170,7 @@ The sawman library, a part of directfb
 %package -n	%{libdavinci}
 Summary:	The davinci library, a part of directfb
 Group:		System/Libraries
+Obsoletes:	%{lib}libdavinci1.7_6
 
 %description -n	%{libdavinci}
 The davinci library, a part of directfb
@@ -299,10 +304,10 @@ export CXX=g++
 # multiarch policy
 %multiarch_binaries %{buildroot}%{_bindir}/directfb-config
 
-#two temporary hacks to sort out arm 32 bit build installs
+
 %files
 
-%ifarch %{arm}
+%ifnarch %{armx}
 %{_bindir}/c64xdump
 %endif
 %{_bindir}/dfb*
@@ -364,10 +369,10 @@ export CXX=g++
 %files -n %{libsawman}
 %{_libdir}/libsawman-%{api}.so.%{major}*
 
-%ifarch %{arm}
+%ifnarch %{arm}
 %files -n %{libdavinci}
-%{_libdir}/libdavinci_c64x.so.0
-%{_libdir}/libdavinci_c64x.so.0.0.0
+%{_libdir}/libdavinci_c64x.0
+%{_libdir}/libdavinci_c64x.0.0.0
 %endif
 
 %files doc
