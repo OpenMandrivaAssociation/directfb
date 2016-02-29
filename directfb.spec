@@ -24,7 +24,7 @@
 Summary:	Hardware graphics acceleration library
 Name:		directfb
 Version:	1.7.6
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
@@ -48,7 +48,7 @@ Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
 Patch12:	DirectFB-ffmpeg.patch
 Patch13:	DirectFB-1.7.4-uniquewm-compile-fixes.patch
-Patch14:	DirectFB-1.7.6-add-missing-divine-include-file.patch
+Patch14:	directfb-1.7.6-compile.patch
 
 Conflicts:	%mklibname directfb -d < 1.7
 
@@ -197,7 +197,7 @@ DirectFB documentation and examples.
 %patch11 -p1 -b .thumb~
 %patch12 -p1 -b .ffmpeg~
 %patch13 -p1 -b .uniquewm~
-%patch14 -p1 -b .divinc~
+%patch14 -p1 -b .compile~
 
 #A reminder of what not to do to include files....
 # Needed for Qt 5 as of Qt 5.0.1:

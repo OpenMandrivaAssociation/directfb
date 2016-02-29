@@ -1,0 +1,131 @@
+--- DirectFB-1.7.6/interfaces/IDirectFBImageProvider/idirectfbimageprovider_ffmpeg.c.omv~	2016-02-29 03:40:20.379933416 +0100
++++ DirectFB-1.7.6/interfaces/IDirectFBImageProvider/idirectfbimageprovider_ffmpeg.c	2016-02-29 03:40:26.505921046 +0100
+@@ -270,7 +270,7 @@ IDirectFBImageProvider_FFMPEG_RenderTo(
+ 
+      /*No scaling just colourspace conversion*/
+      sw_sca_ctx = sws_getCachedContext(sw_sca_ctx, av_codec_ctx->width, av_codec_ctx->height, av_codec_ctx->pix_fmt,
+-                                  av_codec_ctx->width, av_codec_ctx->height, PIX_FMT_BGRA,
++                                  av_codec_ctx->width, av_codec_ctx->height, AV_PIX_FMT_BGRA,
+                                   SWS_FAST_BILINEAR, NULL,
+                                   NULL, NULL);
+      if (sw_sca_ctx == NULL)
+--- DirectFB-1.7.6/interfaces/IDirectFBVideoProvider/idirectfbvideoprovider_ffmpeg.c.omv~	2016-02-29 05:02:00.101687190 +0100
++++ DirectFB-1.7.6/interfaces/IDirectFBVideoProvider/idirectfbvideoprovider_ffmpeg.c	2016-02-29 05:03:16.097717574 +0100
+@@ -601,42 +601,42 @@ static inline DVCPixelFormat
+ ff2dvc_pixelformat( int pix_fmt )
+ {
+      switch (pix_fmt) {
+-          case PIX_FMT_YUV420P:
+-          case PIX_FMT_YUVJ420P:
++          case AV_PIX_FMT_YUV420P:
++          case AV_PIX_FMT_YUVJ420P:
+                return DVCPF_YUV420;
+-          case PIX_FMT_YUV422P:
+-          case PIX_FMT_YUVJ422P:
++          case AV_PIX_FMT_YUV422P:
++          case AV_PIX_FMT_YUVJ422P:
+                return DVCPF_YUV422;
+-          case PIX_FMT_YUV444P:
+-          case PIX_FMT_YUVJ444P:
++          case AV_PIX_FMT_YUV444P:
++          case AV_PIX_FMT_YUVJ444P:
+                return DVCPF_YUV444;
+-          case PIX_FMT_YUV411P:
++          case AV_PIX_FMT_YUV411P:
+                return DVCPF_YUV411;
+-          case PIX_FMT_YUV410P:
++          case AV_PIX_FMT_YUV410P:
+                return DVCPF_YUV410;
+-          case PIX_FMT_YUYV422:
++          case AV_PIX_FMT_YUYV422:
+                return DVCPF_YUYV_LE;
+-          case PIX_FMT_UYVY422:
++          case AV_PIX_FMT_UYVY422:
+                return DVCPF_YUYV_BE;
+-          case PIX_FMT_NV12:
++          case AV_PIX_FMT_NV12:
+                return DVCPF_NV12_LE;
+-          case PIX_FMT_NV21:
++          case AV_PIX_FMT_NV21:
+                return DVCPF_NV12_BE;
+-          case PIX_FMT_GRAY8:
++          case AV_PIX_FMT_GRAY8:
+                return DVCPF_Y8;
+-          case PIX_FMT_RGB8:
++          case AV_PIX_FMT_RGB8:
+                return DVCPF_RGB8;
+-          case PIX_FMT_RGB555:
++          case AV_PIX_FMT_RGB555:
+                return DVCPF_RGB15;
+-          case PIX_FMT_RGB565:
++          case AV_PIX_FMT_RGB565:
+                return DVCPF_RGB16;
+-          case PIX_FMT_RGB24:
++          case AV_PIX_FMT_RGB24:
+                return DVCPF_RGB24;
+-          case PIX_FMT_BGR24:
++          case AV_PIX_FMT_BGR24:
+                return DVCPF_BGR24;
+-          case PIX_FMT_RGB32:
++          case AV_PIX_FMT_RGB32:
+                return DVCPF_RGB32;
+-          case PIX_FMT_BGR32:
++          case AV_PIX_FMT_BGR32:
+                return DVCPF_BGR32;
+          default:
+                D_ONCE("unsupported picture format");
+@@ -1044,37 +1044,37 @@ IDirectFBVideoProvider_FFmpeg_GetSurface
+      }
+ 
+      switch (data->video.ctx->pix_fmt) {
+-          case PIX_FMT_RGB8:
++          case AV_PIX_FMT_RGB8:
+                desc->pixelformat = DSPF_RGB332;
+                break;
+-          case PIX_FMT_RGB555:
++          case AV_PIX_FMT_RGB555:
+                desc->pixelformat = DSPF_ARGB1555;
+                break;
+-          case PIX_FMT_RGB565:
++          case AV_PIX_FMT_RGB565:
+                desc->pixelformat = DSPF_RGB16;
+                break;
+-          case PIX_FMT_RGB24:
+-          case PIX_FMT_BGR24:
++          case AV_PIX_FMT_RGB24:
++          case AV_PIX_FMT_BGR24:
+                desc->pixelformat = DSPF_RGB24;
+                break;
+-          case PIX_FMT_RGB32:
+-          case PIX_FMT_BGR32:
++          case AV_PIX_FMT_RGB32:
++          case AV_PIX_FMT_BGR32:
+                desc->pixelformat = DSPF_RGB32;
+                break;
+-          case PIX_FMT_YUYV422:
++          case AV_PIX_FMT_YUYV422:
+                desc->pixelformat = DSPF_YUY2;
+                break;
+-          case PIX_FMT_UYVY422:
++          case AV_PIX_FMT_UYVY422:
+                desc->pixelformat = DSPF_UYVY;
+                break;
+-          case PIX_FMT_YUV444P:
+-          case PIX_FMT_YUV422P:
+-          case PIX_FMT_YUV420P:
+-          case PIX_FMT_YUV411P:
+-          case PIX_FMT_YUV410P:
+-          case PIX_FMT_YUVJ420P:
+-          case PIX_FMT_YUVJ422P:
+-          case PIX_FMT_YUVJ444P:
++          case AV_PIX_FMT_YUV444P:
++          case AV_PIX_FMT_YUV422P:
++          case AV_PIX_FMT_YUV420P:
++          case AV_PIX_FMT_YUV411P:
++          case AV_PIX_FMT_YUV410P:
++          case AV_PIX_FMT_YUVJ420P:
++          case AV_PIX_FMT_YUVJ422P:
++          case AV_PIX_FMT_YUVJ444P:
+                desc->pixelformat = DSPF_I420;
+                break;
+           default:
