@@ -24,7 +24,7 @@
 Summary:	Hardware graphics acceleration library
 Name:		directfb
 Version:	1.7.6
-Release:	4
+Release:	5
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
@@ -184,7 +184,7 @@ Group:		Books/Computer books
 DirectFB documentation and examples.
 
 %prep
-%setup  -q -n %{oname}-%{version}
+%autosetup -n %{oname}-%{version}
 %patch0 -p1 -b .sysfs~
 %patch1 -p1 -b .link-static-ar~
 %patch3 -p1
@@ -288,14 +288,13 @@ export CXX=g++
 	--disable-multi
 %endif
 
-%make LIBS="-lbz2 -ldl -pthread -lpthread"
+%make_build LIBS="-lbz2 -ldl -pthread -lpthread"
 
 %install
-%makeinstall_std
+%make_install
 
 # multiarch policy
 %multiarch_binaries %{buildroot}%{_bindir}/directfb-config
-
 
 %files
 
