@@ -184,7 +184,7 @@ Group:		Books/Computer books
 DirectFB documentation and examples.
 
 %prep
-%autosetup -n %{oname}-%{version}
+%setup -qn %{oname}-%{version}
 %patch0 -p1 -b .sysfs~
 %patch1 -p1 -b .link-static-ar~
 %patch3 -p1
