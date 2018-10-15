@@ -293,11 +293,7 @@ export CXX=g++
 %install
 %make_install
 
-# multiarch policy
-%multiarch_binaries %{buildroot}%{_bindir}/directfb-config
-
 %files
-
 %ifarch %{arm}
 %{_bindir}/c64xdump
 %endif
@@ -318,7 +314,7 @@ export CXX=g++
 %{_libdir}/%{name}-%{api}-%{major}
 
 %files -n %{devname}
-%{multiarch_bindir}/directfb-config
+%{_bindir}/directfb-config
 %{_includedir}/directfb
 %{_includedir}/directfb-internal
 %{_includedir}/divine
