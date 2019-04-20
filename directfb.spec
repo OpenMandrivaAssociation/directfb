@@ -24,7 +24,7 @@
 Summary:	Hardware graphics acceleration library
 Name:		directfb
 Version:	1.7.6
-Release:	6
+Release:	7
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
@@ -76,7 +76,7 @@ BuildRequires:	pkgconfig(libsvg-cairo)
 BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	pkgconfig(libvncserver)
 #BuildRequires:	pkgconfig(swfdec-0.8)
-BuildRequires:	pkgconfig(tslib-0.0)
+BuildRequires:	pkgconfig(tslib)
 BuildRequires:	pkgconfig(vdpau)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
