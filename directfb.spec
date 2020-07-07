@@ -146,7 +146,6 @@ The fusionsound library, a part of directfb
 %package -n	%{libdivine}
 Summary:	The divine library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{_lib}libdivine1.7_6
 
 %description -n	%{libdivine}
 The divine library, a part of directfb
@@ -154,7 +153,6 @@ The divine library, a part of directfb
 %package -n	%{libsawman}
 Summary:	The sawman library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{_lib}/libsawman1.7_6
 
 %description -n	%{libsawman}
 The sawman library, a part of directfb
@@ -162,7 +160,6 @@ The sawman library, a part of directfb
 %package -n	%{libdavinci}
 Summary:	The davinci library, a part of directfb
 Group:		System/Libraries
-Obsoletes:	%{_lib}/libdavinci1.7_6
 
 %description -n	%{libdavinci}
 The davinci library, a part of directfb
