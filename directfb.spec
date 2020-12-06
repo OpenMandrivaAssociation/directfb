@@ -20,7 +20,6 @@
 %{?_with_multi: %{expand: %%global build_multi 1}}
 
 %define Werror_cflags %nil
-%define oversion 1_7_7
 
 Summary:	Hardware graphics acceleration library
 Name:		directfb
@@ -47,7 +46,6 @@ Patch4:		DirectFB-1.4.2-x11-linkage.patch
 Patch6:		DirectFB-1.4.2-unicode.patch
 Patch7:		DirectFB-1.7.3-svg-includedir.patch
 Patch8:		DirectFB-1.6.1-zlib.patch
-#Patch9:		DirectFB-1.5.3-add-missing-davinci-files.patch
 Patch9:		DirectFB-missing.patch
 Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
@@ -211,8 +209,8 @@ autoreconf -if
 %build
 %global optflags %{optflags} -Ofast -w
 
-#export CC=gcc
-#export CXX=g++
+export CC=gcc
+export CXX=g++
 
 %configure \
 	--disable-maintainer-mode \
