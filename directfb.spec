@@ -44,7 +44,7 @@ Patch4:		DirectFB-1.4.2-x11-linkage.patch
 Patch6:		DirectFB-1.4.2-unicode.patch
 Patch7:		DirectFB-1.7.3-svg-includedir.patch
 Patch8:		DirectFB-1.6.1-zlib.patch
-Patch9:		DirectFB-1.5.3-add-missing-davinci-files.patch
+#Patch9:		DirectFB-1.5.3-add-missing-davinci-files.patch
 Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
 Patch12:	DirectFB-ffmpeg.patch
@@ -190,7 +190,7 @@ DirectFB documentation and examples.
 %patch6 -p1 -b .unicode~
 %patch7 -p1 -b .svgdir~
 %patch8 -p1 -b .zlib~
-%patch9 -p1 -b .davinci~
+#patch9 -p1 -b .davinci~
 %patch10 -p1 -b .atomic~
 %patch11 -p1 -b .thumb~
 %patch12 -p1 -b .ffmpeg~
