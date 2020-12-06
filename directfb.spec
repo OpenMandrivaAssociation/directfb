@@ -29,7 +29,8 @@ Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
-Source0:	https://github.com/deniskropp/DirectFB/archive/DIRECTFB_%{oversion}/%{oname}-DIRECTFB_%{oversion}.tar.gz
+#Source0:	https://github.com/deniskropp/DirectFB/archive/DIRECTFB_%{oversion}/%{oname}-DIRECTFB_%{oversion}.tar.gz
+Source0:	http://sources.buildroot.net/%{oname}-%{version}.tar.gz
 # from Debian
 Patch0:		03_link_static_sysfs.patch
 Patch1:		DirectFB-1.6.1-link-static-ar.patch
@@ -182,7 +183,7 @@ Group:		Books/Computer books
 DirectFB documentation and examples.
 
 %prep
-%setup -qn %{oname}-DIRECTFB_%{oversion}
+%setup -qn %{oname}-%{version}
 %patch0 -p1 -b .sysfs~
 %patch1 -p1 -b .link-static-ar~
 %patch3 -p1
