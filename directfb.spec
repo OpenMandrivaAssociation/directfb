@@ -182,7 +182,7 @@ Group:		Books/Computer books
 DirectFB documentation and examples.
 
 %prep
-%setup -qn %{oname}-DIRECTBF_%{oversion}
+%setup -qn %{oname}-DIRECTFB_%{oversion}
 %patch0 -p1 -b .sysfs~
 %patch1 -p1 -b .link-static-ar~
 %patch3 -p1
