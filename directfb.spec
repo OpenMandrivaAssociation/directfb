@@ -1,6 +1,6 @@
 %define oname DirectFB
 %define api 1.7
-%define major 6
+%define major 7
 %define libdirectfb %mklibname %{name} %{api} %{major}
 %define libdirect %mklibname direct %{api} %{major}
 %define libppdfb %mklibname ++dfb %{api} %{major}
