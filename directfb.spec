@@ -29,6 +29,8 @@ Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
+# Do not use source archive from github because it lack of flux and almost no one packge it. Use tarball instead.
+# Looks like directfb website is no longer owned by original developers, so use latest tarball from other safe place sources.buildroot.net
 #Source0:	https://github.com/deniskropp/DirectFB/archive/DIRECTFB_%{oversion}/%{oname}-DIRECTFB_%{oversion}.tar.gz
 Source0:	http://sources.buildroot.net/%{oname}-%{version}.tar.gz
 # from Debian
@@ -209,8 +211,8 @@ autoreconf -if
 %build
 %global optflags %{optflags} -Ofast -w
 
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 
 %configure \
 	--disable-maintainer-mode \
