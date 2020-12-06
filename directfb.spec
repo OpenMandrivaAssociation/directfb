@@ -1,6 +1,6 @@
 %define oname DirectFB
 %define api 1.7
-%define major 6
+%define major 7
 %define libdirectfb %mklibname %{name} %{api} %{major}
 %define libdirect %mklibname direct %{api} %{major}
 %define libppdfb %mklibname ++dfb %{api} %{major}
@@ -23,12 +23,15 @@
 
 Summary:	Hardware graphics acceleration library
 Name:		directfb
-Version:	1.7.6
-Release:	8
+Version:	1.7.7
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
-Source0:	http://www.directfb.org/downloads/Core/%{oname}-%{api}/%{oname}-%{version}.tar.gz
+# Do not use source archive from github because it lack of flux and almost no one packge it. Use tarball instead.
+# Looks like directfb website is no longer owned by original developers, so use latest tarball from other safe place sources.buildroot.net
+#Source0:	https://github.com/deniskropp/DirectFB/archive/DIRECTFB_%{oversion}/%{oname}-DIRECTFB_%{oversion}.tar.gz
+Source0:	http://sources.buildroot.net/%{oname}-%{version}.tar.gz
 # from Debian
 Patch0:		03_link_static_sysfs.patch
 Patch1:		DirectFB-1.6.1-link-static-ar.patch
@@ -43,7 +46,7 @@ Patch4:		DirectFB-1.4.2-x11-linkage.patch
 Patch6:		DirectFB-1.4.2-unicode.patch
 Patch7:		DirectFB-1.7.3-svg-includedir.patch
 Patch8:		DirectFB-1.6.1-zlib.patch
-Patch9:		DirectFB-1.5.3-add-missing-davinci-files.patch
+Patch9:		DirectFB-missing.patch
 Patch10:	DirectFB-1.6.1-gcc-atomics-on-arm.patch
 Patch11:	DirectFB-1.6.3-atomic-fix-compiler-error-when-building-for-thumb2.patch
 Patch12:	DirectFB-ffmpeg.patch
@@ -189,7 +192,7 @@ DirectFB documentation and examples.
 %patch6 -p1 -b .unicode~
 %patch7 -p1 -b .svgdir~
 %patch8 -p1 -b .zlib~
-%patch9 -p1 -b .davinci~
+%patch9 -p1
 %patch10 -p1 -b .atomic~
 %patch11 -p1 -b .thumb~
 %patch12 -p1 -b .ffmpeg~
