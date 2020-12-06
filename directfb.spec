@@ -20,15 +20,16 @@
 %{?_with_multi: %{expand: %%global build_multi 1}}
 
 %define Werror_cflags %nil
+%define oversion 1_7_7
 
 Summary:	Hardware graphics acceleration library
 Name:		directfb
-Version:	1.7.6
-Release:	8
+Version:	1.7.7
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
-Source0:	http://www.directfb.org/downloads/Core/%{oname}-%{api}/%{oname}-%{version}.tar.gz
+Source0:	https://github.com/deniskropp/DirectFB/archive/DIRECTFB_%{oversion}.tar.gz
 # from Debian
 Patch0:		03_link_static_sysfs.patch
 Patch1:		DirectFB-1.6.1-link-static-ar.patch
@@ -181,7 +182,7 @@ Group:		Books/Computer books
 DirectFB documentation and examples.
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -qn %{oname}-DIRECTBF_%{oversion}
 %patch0 -p1 -b .sysfs~
 %patch1 -p1 -b .link-static-ar~
 %patch3 -p1
