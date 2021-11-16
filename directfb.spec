@@ -24,7 +24,7 @@
 Summary:	Hardware graphics acceleration library
 Name:		directfb
 Version:	1.7.7
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		http://www.directfb.org/
@@ -56,8 +56,8 @@ Patch14:	directfb-1.7.6-compile.patch
 Conflicts:	%mklibname directfb -d < 1.7
 
 
-BuildRequires:	bzip2-devel
-BuildRequires:	jpeg-devel
+BuildRequires:	pkgconfig(bzip2)
+BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libmng)
 BuildRequires:	sysfsutils-devel
 BuildRequires:	pkgconfig(egl)
@@ -323,9 +323,9 @@ export CXX=g++
 %{_includedir}/fusionsound-internal
 %{_includedir}/sawman
 %{_includedir}/++dfb
-%{_mandir}/man1/directfb-csource.1*
-%{_mandir}/man1/dfbg.1*
-%{_mandir}/man5/directfbrc.5*
+%doc %{_mandir}/man1/directfb-csource.1*
+%doc %{_mandir}/man1/dfbg.1*
+%doc %{_mandir}/man5/directfbrc.5*
 %{_libdir}/pkgconfig/*
 %{_libdir}/lib*.so
 
