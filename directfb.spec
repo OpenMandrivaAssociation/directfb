@@ -56,6 +56,11 @@ Patch14:	directfb-1.7.6-compile.patch
 Conflicts:	%mklibname directfb -d < 1.7
 
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libmng)
