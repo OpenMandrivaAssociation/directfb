@@ -24,7 +24,7 @@
 Summary:	Hardware graphics acceleration library
 Name:		directfb
 Version:	1.7.7
-Release:	5
+Release:	6
 License:	LGPLv2+
 Group:		System/Libraries
 URL:		https://www.directfb.org/
