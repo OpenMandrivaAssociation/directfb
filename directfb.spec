@@ -249,7 +249,7 @@ export CXX=g++
 	--enable-fbdev \
 	--enable-sdl \
 	--enable-vnc \
-	--enable-mesa \
+	--disable-mesa \
 	--enable-drmkms \
 	--enable-jpeg \
 	--enable-zlib \
