@@ -16,6 +16,9 @@
 # Multiple applications support
 # Requires fusion kernel module
 %define build_multi	0
+# The x11 input driver calls dfb_x11_update_screen in the x11 system module.
+# Those symbols are resolved when both modules are loaded.
+%global _disable_ld_no_undefined 1
 %{?_without_multi: %{expand: %%global build_multi 0}}
 %{?_with_multi: %{expand: %%global build_multi 1}}
 
