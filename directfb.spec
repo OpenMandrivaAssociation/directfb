@@ -190,19 +190,19 @@ DirectFB documentation and examples.
 
 %prep
 %setup -qn %{oname}-%{version}
-%patch0 -p1 -b .sysfs~
-%patch1 -p1 -b .link-static-ar~
-%patch3 -p1
-%patch4 -p1 -b .x11-linkage~
-%patch6 -p1 -b .unicode~
-%patch7 -p1 -b .svgdir~
-%patch8 -p1 -b .zlib~
-%patch9 -p1
-%patch10 -p1 -b .atomic~
-%patch11 -p1 -b .thumb~
-%patch12 -p1 -b .ffmpeg~
-%patch13 -p1 -b .uniquewm~
-%patch14 -p1 -b .compile~
+%patch 0 -p1 -b .sysfs~
+%patch 1 -p1 -b .link-static-ar~
+%patch 3 -p1
+%patch 4 -p1 -b .x11-linkage~
+%patch 6 -p1 -b .unicode~
+%patch 7 -p1 -b .svgdir~
+%patch 8 -p1 -b .zlib~
+%patch 9 -p1
+%patch 10 -p1 -b .atomic~
+%patch 11 -p1 -b .thumb~
+%patch 12 -p1 -b .ffmpeg~
+%patch 13 -p1 -b .uniquewm~
+%patch 14 -p1 -b .compile~
 
 #A reminder of what not to do to include files....
 # Needed for Qt 5 as of Qt 5.0.1:
