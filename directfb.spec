@@ -225,7 +225,8 @@ sed -i \
 autoreconf -if
 
 %build
-%global optflags %{optflags} -Ofast -w
+# gcc rejects int-to-pointer returns even when -w is set.
+%global optflags %{optflags} -Ofast -w -Wno-int-conversion
 
 export CC=gcc
 export CXX=g++
