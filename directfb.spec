@@ -225,8 +225,9 @@ sed -i \
 autoreconf -if
 
 %build
-# gcc rejects int-to-pointer returns even when -w is set.
-%global optflags %{optflags} -Ofast -w -Wno-int-conversion
+# gcc rejects int-to-pointer returns and mismatched function pointers
+# even when -w is set. The old gfxdrivers predate the FlipRegion arguments.
+%global optflags %{optflags} -Ofast -w -Wno-int-conversion -Wno-incompatible-pointer-types
 
 export CC=gcc
 export CXX=g++
