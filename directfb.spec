@@ -215,6 +215,13 @@ DirectFB documentation and examples.
 # libstdc++ requires the set comparator to be const.
 sed -i 's/operator()( *Task *\*t1, *Task *\*t2 *)/operator()( Task *t1, Task *t2 ) const/' src/core/TaskManager.h
 
+# CoreLayerRegion no longer carries a context pointer. test_foo is not installed.
+sed -i \
+	-e '/D_ASSERT( region->context != NULL );/d' \
+	-e '/dfb_layer_context_lock( region->context );/d' \
+	-e '/dfb_layer_context_unlock( region->context );/d' \
+	wm/unique/test_foo.c
+
 autoreconf -if
 
 %build
