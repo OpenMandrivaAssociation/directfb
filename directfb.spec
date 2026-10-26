@@ -209,6 +209,9 @@ DirectFB documentation and examples.
 #sed -e '/define __typeof/d' -i lib/direct/os/linux/glibc/types.h
 #find . -name "*.h" |xargs sed -i -e 's,__typeof__,typeof,g'
 
+# libstdc++ requires the set comparator to be const.
+sed -i 's/operator()( *Task *\*t1, *Task *\*t2 *)/operator()( Task *t1, Task *t2 ) const/' src/core/TaskManager.h
+
 autoreconf -if
 
 %build
